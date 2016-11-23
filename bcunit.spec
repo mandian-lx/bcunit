@@ -19,7 +19,6 @@ Url:		https://github.com/BelledonneCommunications/%{name}
 Source0:	https://github.com/BelledonneCommunications/%{name}/archive/%{commit}/%{name}-%{commit}.zip
 
 BuildRequires:	cmake
-BuildRequires:	doxygen
 BuildRequires:	pkgconfig(ncurses)
 
 %description
