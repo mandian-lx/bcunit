@@ -1,3 +1,5 @@
+# NOTE:	Latest stable release (3.0) still uses CUnit
+#	as name so it conflicts with 'cunit' package.
 %define commit 29c556fa8ac1ab21fba1291231ffa8dea43cf32a
 %define shortcommit %(c=%{commit}; echo ${c:0:7})
 
@@ -23,11 +25,11 @@ BuildRequires:	pkgconfig(ncurses)
 
 %description
 BCUnit is a lightweight system for writing, administering, and running unit
-tests in C.  It provides C programmers a basic testing functionality with a
+tests in C. It provides C programmers a basic testing functionality with a
 flexible variety of user interfaces.
 
 BCUnit is built as a static library which is linked with the user's testing
-code.  It uses a simple framework for building test structures, and provides
+code. It uses a simple framework for building test structures, and provides
 a rich set of assertions for testing common data types. In addition, several
 different interfaces are provided for running tests and reporting results.
 These interfaces currently include:
@@ -48,11 +50,11 @@ Group:		System/Libraries
 
 %description -n	%{libname}
 BCUnit is a lightweight system for writing, administering, and running unit
-tests in C.  It provides C programmers a basic testing functionality with a
+tests in C. It provides C programmers a basic testing functionality with a
 flexible variety of user interfaces.
 
 BCUnit is built as a static library which is linked with the user's testing
-code.  It uses a simple framework for building test structures, and provides
+code. It uses a simple framework for building test structures, and provides
 a rich set of assertions for testing common data types. In addition, several
 different interfaces are provided for running tests and reporting results.
 These interfaces currently include:
@@ -76,7 +78,6 @@ Summary:	Development files for %{name}
 Group:		Development/C
 Requires:	%{libname} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
-Obsoletes:	%{name}-devel-doc < 1.0.15-2
 
 %description -n	%{devname}
 This package includes the development files for %{name}.
