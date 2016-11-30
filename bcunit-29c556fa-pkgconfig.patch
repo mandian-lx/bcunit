@@ -1,0 +1,16 @@
+--- bcunit-29c556fa8ac1ab21fba1291231ffa8dea43cf32a.orig/CMakeLists.txt
++++ bcunit-29c556fa8ac1ab21fba1291231ffa8dea43cf32a/CMakeLists.txt
+@@ -54,9 +54,10 @@
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h)
+ 
+ 
+-set(exec_prefix ${CMAKE_INSTALL_BINDIR})
+-set(libdir ${CMAKE_INSTALL_LIBDIR})
+-set(includedir ${CMAKE_INSTALL_INCLUDEDIR})
++set(prefix ${CMAKE_INSTALL_PREFIX})
++set(exec_prefix ${CMAKE_INSTALL_PREFIX})
++set(libdir ${CMAKE_INSTALL_FULL_LIBDIR})
++set(includedir ${CMAKE_INSTALL_FULL_INCLUDEDIR})
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/bcunit.pc.in ${CMAKE_CURRENT_BINARY_DIR}/bcunit.pc)
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/bcunit.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
+ 

@@ -6,7 +6,7 @@
 %define oname BCUnit
 %define lname %(echo %oname | tr [:upper:] [:lower:])
 
-%define major	1.0.1
+%define major	1
 %define libname	%mklibname %{name} %{major}
 %define devname	%mklibname -d %{name}
 
@@ -19,6 +19,10 @@ Group:		System/Libraries
 Url:		https://github.com/BelledonneCommunications/%{name}
 #Source0:	https://github.com/BelledonneCommunications/%{name}/archive/%{version}.tar.gz
 Source0:	https://github.com/BelledonneCommunications/%{name}/archive/%{commit}/%{name}-%{commit}.zip
+Patch0:		%{name}-3.0-cmake_path.patch
+Patch1:		%{name}-3.0-soversion.patch
+Patch2:		%{name}-29c556fa-pkgconfig.patch
+Patch3:		%{name}-29c556fa-soversion.patch
 
 BuildRequires:	cmake
 BuildRequires:	pkgconfig(ncurses)
@@ -101,9 +105,11 @@ This package includes the development files for %{name}.
 %prep
 %setup -q -n %{name}-%{commit}
 
-# fix libdir in CMakeLists.txt
-sed -i -e 's|libdir ${prefix}/lib)|libdir ${prefix}/%{_lib})|g' CMakeLists.txt
-sed -i -e 's|lib/|%{_lib}|g' CMakeLists.txt
+# Apply all patches
+#patch0 -p1 -b .orig
+#patch1 -p1 -b .orig
+%patch2 -p1 -b .orig
+%patch3 -p1 -b .orig
 
 %build
 %cmake \

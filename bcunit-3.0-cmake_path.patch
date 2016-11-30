@@ -1,0 +1,28 @@
+--- bcunit-3.0.orig/CMakeLists.txt
++++ bcunit-3.0/CMakeLists.txt
+@@ -48,11 +48,11 @@
+ 
+ 
+ set(prefix ${CMAKE_INSTALL_PREFIX})
+-set(exec_prefix ${prefix}/bin)
+-set(libdir ${prefix}/lib64)
+-set(includedir ${prefix}/include)
++set(exec_prefix ${CMAKE_INSTALL_LIBDIR})
++set(libdir ${CMAKE_INSTALL_LIBDIR})
++set(includedir ${CMAKE_INSTALL_INCLUDEDIR})
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/cunit.pc.in ${CMAKE_CURRENT_BINARY_DIR}/cunit.pc)
+-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/cunit.pc DESTINATION lib64pkgconfig)
++install(FILES ${CMAKE_CURRENT_BINARY_DIR}/cunit.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
+ 
+ 
+ if(MSVC)
+--- bcunit-3.0.orig/doc/Makefile.am
++++ bcunit-3.0/doc/Makefile.am
+@@ -1,6 +1,6 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+-docdir = $(prefix)/doc/@PACKAGE@
++docdir = ${datadir}/doc/@PACKAGE@
+ 
+ doc_DATA = \
+ 	CUnit_doc.css \
