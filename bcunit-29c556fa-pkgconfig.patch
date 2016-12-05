@@ -8,7 +8,7 @@
 -set(libdir ${CMAKE_INSTALL_LIBDIR})
 -set(includedir ${CMAKE_INSTALL_INCLUDEDIR})
 +set(prefix ${CMAKE_INSTALL_PREFIX})
-+set(exec_prefix ${CMAKE_INSTALL_PREFIX})
++set(exec_prefix ${CMAKE_INSTALL_FULL_BINDIR})
 +set(libdir ${CMAKE_INSTALL_FULL_LIBDIR})
 +set(includedir ${CMAKE_INSTALL_FULL_INCLUDEDIR})
  configure_file(${CMAKE_CURRENT_SOURCE_DIR}/bcunit.pc.in ${CMAKE_CURRENT_BINARY_DIR}/bcunit.pc)
