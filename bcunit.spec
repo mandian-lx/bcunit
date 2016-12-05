@@ -19,10 +19,11 @@ Group:		System/Libraries
 Url:		https://github.com/BelledonneCommunications/%{name}
 #Source0:	https://github.com/BelledonneCommunications/%{name}/archive/%{version}.tar.gz
 Source0:	https://github.com/BelledonneCommunications/%{name}/archive/%{commit}/%{name}-%{commit}.zip
-Patch0:		%{name}-3.0-cmake_path.patch
+Patch0:		%{name}-3.0-pkgconfig.patch
 Patch1:		%{name}-3.0-soversion.patch
-Patch2:		%{name}-29c556fa-pkgconfig.patch
-Patch3:		%{name}-29c556fa-soversion.patch
+Patch2:		%{name}-3.0-docdir.patch
+Patch3:		%{name}-29c556fa-pkgconfig.patch
+Patch4:		%{name}-29c556fa-soversion.patch
 
 BuildRequires:	cmake
 BuildRequires:	pkgconfig(ncurses)
@@ -108,8 +109,9 @@ This package includes the development files for %{name}.
 # Apply all patches
 #patch0 -p1 -b .orig
 #patch1 -p1 -b .orig
-%patch2 -p1 -b .orig
+#patch2 -p1 -b .orig
 %patch3 -p1 -b .orig
+%patch4 -p1 -b .orig
 
 %build
 %cmake \

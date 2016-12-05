@@ -1,0 +1,18 @@
+--- bcunit-3.0.orig/CMakeLists.txt
++++ bcunit-3.0/CMakeLists.txt
+@@ -48,11 +48,11 @@
+ 
+ 
+ set(prefix ${CMAKE_INSTALL_PREFIX})
+-set(exec_prefix ${prefix}/bin)
+-set(libdir ${prefix}/lib64)
+-set(includedir ${prefix}/include)
++set(exec_prefix ${CMAKE_INSTALL_FULL_BINDIR})
++set(libdir ${CMAKE_INSTALL_FULL_LIBDIR})
++set(includedir ${CMAKE_INSTALL_FULL_INCLUDEDIR})
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/cunit.pc.in ${CMAKE_CURRENT_BINARY_DIR}/cunit.pc)
+-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/cunit.pc DESTINATION lib64pkgconfig)
++install(FILES ${CMAKE_CURRENT_BINARY_DIR}/cunit.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
+ 
+ 
+ if(MSVC)
