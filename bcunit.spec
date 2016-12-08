@@ -12,7 +12,7 @@
 
 Summary:	A fork of the defunct project CUnit (Unit Testing Framework for C)
 Name:		%{lname}
-Version:	3.0.1
+Version:	3.0
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
