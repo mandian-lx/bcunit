@@ -17,7 +17,7 @@ Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://github.com/BelledonneCommunications/%{name}
-#Source0:	https://github.com/BelledonneCommunications/%{name}/archive/%{version}.tar.gz
+#Source0:	https://github.com/BelledonneCommunications/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
 Source0:	https://github.com/BelledonneCommunications/%{name}/archive/%{commit}/%{name}-%{commit}.zip
 Patch0:		%{name}-3.0-pkgconfig.patch
 Patch1:		%{name}-3.0-soversion.patch
